@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technology blog with everything you need to know about SSD storage for enterprise, data center, and client applications">
+    <title>Solidigm Tech Blog | SSD Technology | Customer Stories in SSD Storage</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .technology-page {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .technology-page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .technology-page-header h1 {
+            font-size: 3rem;
+            color: var(--primary-brand-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .technology-page-header p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .article-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .article-card__image {
+            width: 100%;
+            height: 200px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .article-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article-card__content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-card__category {
+            font-size: 0.875rem;
+            color: var(--primary-purple);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .article-card__title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-brand-color);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .article-card__link {
+            color: var(--primary-purple);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+        
+        .article-card__link:hover {
+            color: var(--primary-brand-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="cmp-navigation">
+            <div class="cmp-navigation__container">
+                <div class="cmp-navigation__logo">
+                    <a href="../index.html" title="Home" class="cmp-navigation__logo-link">
+                        <img src="https://www.solidigm.com/content/dam/solidigm/en/brand/logo-white.png" alt="Solidigm logo" class="cmp-navigation__logo-image">
+                    </a>
+                </div>
+                <div class="cmp-navigation__menu-mid d-none d-md-block">
+                    <ul class="cmp-navigation__menu-list">
+                        <li class="cmp-navigation__menu-items">
+                            <a href="data-center.html" class="cmp-navigation__menu-links">
+                                <div class="cmp-navigation__menu-text">Product</div>
+                            </a>
+                        </li>
+                        <li class="cmp-navigation__menu-items">
+                            <a href="../solutions/artificial-intelligence.html" class="cmp-navigation__menu-links">
+                                <div class="cmp-navigation__menu-text">Solutions</div>
+                            </a>
+                        </li>
+                        <li class="cmp-navigation__menu-items">
+                            <a href="technology.html" class="cmp-navigation__menu-links">
+                                <div class="cmp-navigation__menu-text">Insights</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Technology Page Content -->
+    <section class="technology-page">
+        <div class="technology-page-header">
+            <h1>Insights</h1>
+            <p>我们的固态硬盘存储解决方案正帮助全球各地的用户利用数据做更多事。请访问我们的技术页面了解如何实现。</p>
+        </div>
+
+        <div class="articles-grid">
+            <div class="article-card">
+                <a href="technology/antillion-driving-innovation-at-the-edge.html">
+                    <div class="article-card__image">
+                        <img src="../site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="Antillion Innovation">
+                    </div>
+                    <div class="article-card__content">
+                        <span class="article-card__category">Industry Solution</span>
+                        <h3 class="article-card__title">Reimagining Portable Wearable Solutions: Overcoming Locality Constraints With Antillion</h3>
+                        <span class="article-card__link">Read More →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="article-card">
+                <a href="technology/solidigm-innovation-in-ssd-packaging-tech.html">
+                    <div class="article-card__image">
+                        <img src="../site/products/data-center/d7/ps1010/blade-images/mobile-images/d7-ps1010-gen-5-pcie-ssd-data-center-ssd-mobile.jpg" alt="SSD Packaging Technology">
+                    </div>
+                    <div class="article-card__content">
+                        <span class="article-card__category">Technology</span>
+                        <h3 class="article-card__title">How Solidigm Drives the Foundation of Innovation in SSD Packaging Technology</h3>
+                        <span class="article-card__link">Read More →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="article-card">
+                <a href="technology/solidigm-fully-liquid-cooled-ssd-solution-q-and-a.html">
+                    <div class="article-card__image">
+                        <img src="../site/products/data-center/d7/p5810/thumbnails/form-factors/u-2/solidigm-d7-p5810-u-2-ssd-thumbmail-image.jpg" alt="Liquid-Cooled SSD">
+                    </div>
+                    <div class="article-card__content">
+                        <span class="article-card__category">Industry Solution</span>
+                        <h3 class="article-card__title">Introducing the Solidigm Fully Liquid-Cooled SSD Solution</h3>
+                        <span class="article-card__link">Read More →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="article-card">
+                <a href="technology/benefits-of-solidigm-d5-series-for-edge-storage-solutions.html">
+                    <div class="article-card__image">
+                        <img src="../site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="D5 Series Benefits">
+                    </div>
+                    <div class="article-card__content">
+                        <span class="article-card__category">Product Insights</span>
+                        <h3 class="article-card__title">Top 5 Benefits of Solidigm D5-Series SSDs for Edge Storage Solutions</h3>
+                        <span class="article-card__link">Read More →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

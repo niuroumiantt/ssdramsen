@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The AI boom is creating ever-higher demands for data infrastructure performance and efficiency. Solidigm and its partners tackle the evolving AI landscape.">
+    <title>Data Storage Optimized for the AI Era | Solidigm</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .ai-hero {
+            background: linear-gradient(135deg, var(--primary-brand-color) 0%, var(--primary-purple) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .ai-hero h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ai-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+        }
+        
+        .ai-workloads {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        
+        .ai-workload-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .ai-workload-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .ai-workload-card h3 {
+            color: var(--primary-brand-color);
+            margin-bottom: 1rem;
+        }
+        
+        .ai-workload-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        
+        .recommended-products {
+            background: var(--light-gray);
+            padding: 4rem 2rem;
+        }
+        
+        .recommended-products h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-brand-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="cmp-navigation">
+            <div class="cmp-navigation__container">
+                <div class="cmp-navigation__logo">
+                    <a href="../index.html" title="Home" class="cmp-navigation__logo-link">
+                        <img src="https://www.solidigm.com/content/dam/solidigm/en/brand/logo-white.png" alt="Solidigm logo" class="cmp-navigation__logo-image">
+                    </a>
+                </div>
+                <div class="cmp-navigation__menu-mid d-none d-md-block">
+                    <ul class="cmp-navigation__menu-list">
+                        <li class="cmp-navigation__menu-items">
+                            <a href="../products/data-center.html" class="cmp-navigation__menu-links">
+                                <div class="cmp-navigation__menu-text">Product</div>
+                            </a>
+                        </li>
+                        <li class="cmp-navigation__menu-items">
+                            <a href="artificial-intelligence.html" class="cmp-navigation__menu-links">
+                                <div class="cmp-navigation__menu-text">Solutions</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- AI Hero Section -->
+    <section class="ai-hero">
+        <h1>Data Storage Optimized for the AI Era</h1>
+        <p>The AI boom is creating ever-higher demands for data infrastructure performance and efficiency. Solidigm and its partners tackle the evolving AI landscape.</p>
+        <a href="#workloads" class="solidigm-btn solidigm-btn--outline">Explore AI Solutions</a>
+    </section>
+
+    <!-- AI Workloads -->
+    <section id="workloads" class="ai-workloads">
+        <div class="ai-workload-card">
+            <h3>Training Acceleration</h3>
+            <p>High-performance SSDs that keep GPUs fed with data during model training, reducing idle time and accelerating time-to-insight. Our PCIe 5.0 SSDs deliver the bandwidth needed for large-scale training workloads.</p>
+        </div>
+        <div class="ai-workload-card">
+            <h3>Inference Optimization</h3>
+            <p>Cost-effective, high-density storage solutions optimized for inference workloads. QLC SSDs provide the capacity and performance needed for deploying AI models at scale while maintaining cost efficiency.</p>
+        </div>
+        <div class="ai-workload-card">
+            <h3>Data Pipeline</h3>
+            <p>End-to-end storage solutions for AI data pipelines, from data ingestion and preparation to model deployment. Our SSDs are optimized for the unique I/O patterns of AI workloads.</p>
+        </div>
+    </section>
+
+    <!-- Recommended Products -->
+    <section class="recommended-products">
+        <h2>Recommended Products for AI Workloads</h2>
+        <div class="products-grid" style="max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="cmp-product-card">
+                <a href="../products/data-center/d7/ps1010.html">
+                    <div class="cmp-product-card__div">
+                        <div class="cmp-product-card__image">
+                            <img src="https://s7d9.scene7.com/is/image/Solidigm/d7-ps1010se-d7-PS1030me-e3s?fmt=avif" alt="D7-PS1010">
+                        </div>
+                        <h3 class="cmp-product-card__title">D7-PS1010</h3>
+                        <div class="cmp-product-card__description">
+                            PCIe 5.0 performance with standard endurance, ideal for AI training and inference workloads.
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cmp-product-card">
+                <a href="../products/data-center/d7/ps1030.html">
+                    <div class="cmp-product-card__div">
+                        <div class="cmp-product-card__image">
+                            <img src="https://s7d9.scene7.com/is/image/Solidigm/d7-ps1010se-d7-PS1030me-e3s-1?fmt=avif" alt="D7-PS1030">
+                        </div>
+                        <h3 class="cmp-product-card__title">D7-PS1030</h3>
+                        <div class="cmp-product-card__description">
+                            PCIe 5.0 with mid-endurance, optimized for write-intensive AI workloads and mixed training scenarios.
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cmp-product-card">
+                <a href="../products/data-center/d5/p5336.html">
+                    <div class="cmp-product-card__div">
+                        <div class="cmp-product-card__image">
+                            <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d5-p5336-u-2-ssd?fmt=avif" alt="D5-P5336">
+                        </div>
+                        <h3 class="cmp-product-card__title">D5-P5336</h3>
+                        <div class="cmp-product-card__description">
+                            High-capacity QLC SSD up to 122TB, perfect for storing large AI datasets and model repositories.
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Solutions Blade -->
+    <section class="cmp-blade">
+        <div class="cmp-blade__media">
+            <img src="https://s7d9.scene7.com/is/image/Solidigm/Solidigm-AI-Products-Series%20Images-Blade?fmt=avif" alt="AI Solutions">
+        </div>
+        <div class="cmp-blade__content">
+            <h2 class="cmp-blade__title">The Future of AI Storage</h2>
+            <div class="cmp-blade__description">
+                <p>As AI models grow larger and more complex, storage becomes a critical bottleneck. Solidigm's innovative SSD solutions are designed to keep pace with the demands of modern AI infrastructure, delivering the performance, capacity, and efficiency needed to power the next generation of AI applications.</p>
+                <span class="cmp-blade__description--border"></span>
+            </div>
+            <div class="cmp-blade__cta-container">
+                <a href="../products/data-center.html" class="solidigm-btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-content__main">
+                <div class="footer-content__left">
+                    <a href="../index.html" class="footer-content__logo" title="Back to homepage">
+                        <img src="https://www.solidigm.com/content/dam/solidigm/en/brand/logo-white.png" alt="Solidigm" style="height: 40px; margin-bottom: 2rem;">
+                    </a>
+                    <div class="footer-content__copyright">
+                        <p>10951 White Rock Rd, Rancho Cordova, CA 95670</p>
+                        <p>US +1 (855) 765 4301</p>
+                        <p>© Solidigm 2025. All rights reserved.</p>
+                    </div>
+                </div>
+                <nav>
+                    <p class="footer-content__title">Company</p>
+                    <ul class="footer-content__links">
+                        <li><a href="#who-we-are" class="footer-content__links__link">Who we are</a></li>
+                        <li><a href="#our-team" class="footer-content__links__link">Our Team</a></li>
+                        <li><a href="#careers" class="footer-content__links__link">Careers</a></li>
+                        <li><a href="#partners" class="footer-content__links__link">Partners</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <p class="footer-content__title">Useful links</p>
+                    <ul class="footer-content__links">
+                        <li><a href="#insights" class="footer-content__links__link">Insights</a></li>
+                        <li><a href="#support" class="footer-content__links__link">Help Center</a></li>
+                        <li><a href="#warranty" class="footer-content__links__link">Warranty Check</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Splide Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
+

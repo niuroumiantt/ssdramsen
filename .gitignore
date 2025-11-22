@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+
+# Old website directories (not needed for new-website)
+www.solidigm.com/
+community.solidigm.com/
+support.solidigm.com/
+estimator.solidigm.com/
+solidigm.com/
+www.solidigmtechnology.cn/
+
+# Markdown design files (optional, can be kept if needed)
+# 网站布局设计.md
+# 项目完成总结.md
