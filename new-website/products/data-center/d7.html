@@ -127,19 +127,42 @@
         /* 响应式：移动端显示菜单按钮 */
         @media (max-width: 768px) {
             .mobile-menu-toggle {
-                display: block;
+                display: block !important;
+                position: relative;
+                z-index: 1001;
             }
             
             .mobile-menu {
                 display: block;
             }
             
+            /* 移动端：遮罩层默认隐藏，只有激活时才显示 */
             .mobile-menu-overlay {
-                display: block;
+                display: none !important;
+                pointer-events: none !important;
+                visibility: hidden !important;
+                z-index: -1 !important;
+            }
+            
+            .mobile-menu-overlay.active {
+                display: block !important;
+                pointer-events: auto !important;
+                visibility: visible !important;
+                z-index: 998 !important;
             }
             
             .cmp-navigation__menu-mid {
                 display: none !important;
+            }
+        }
+        
+        /* 桌面端：确保遮罩层完全不显示且不干扰 */
+        @media (min-width: 769px) {
+            .mobile-menu-overlay {
+                display: none !important;
+                pointer-events: none !important;
+                visibility: hidden !important;
+                z-index: -1 !important;
             }
         }
         
