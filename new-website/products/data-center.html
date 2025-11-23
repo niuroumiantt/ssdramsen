@@ -14,100 +14,216 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../assets/css/main.css">
     <style>
-        .series-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 3rem 2rem;
+        body {
+            background: linear-gradient(to bottom, var(--primary-brand-color) 0%, #000320 100%);
+            color: var(--white);
+        }
+        
+        .cmp-navigation {
+            background-color: rgba(0, 8, 63, 0.8);
+        }
+        
+        .series-highlight {
+            padding: 4rem 2rem;
             max-width: 1440px;
             margin: 0 auto;
         }
         
-        .series-list__serie {
-            background: var(--white);
-            border-radius: 8px;
+        .series-highlight__title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+        
+        .series-highlight__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .series-highlight__card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             display: block;
+            text-decoration: none;
         }
         
-        .series-list__serie:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        .series-highlight__card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-purple);
+            box-shadow: 0 8px 32px rgba(79, 0, 181, 0.3);
         }
         
-        .series-list__serie__image {
+        .series-highlight__card-image {
             width: 100%;
             height: 250px;
             object-fit: cover;
+            background: rgba(255, 255, 255, 0.05);
         }
         
-        .series-list__serie__text {
+        .series-highlight__card-content {
             padding: 2rem;
         }
         
-        .series-list__serie__text__title {
+        .series-highlight__card-title {
             font-size: 1.75rem;
-            color: var(--primary-brand-color);
+            color: var(--white);
             margin-bottom: 1rem;
+            font-weight: 600;
         }
         
-        .series-list__serie__text__description {
-            color: var(--text-gray);
+        .series-highlight__card-description {
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
+        }
+        
+        .products-section {
+            padding: 4rem 2rem;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        
+        .products-section__title {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .product-category {
+            margin-bottom: 4rem;
+        }
+        
+        .product-category__header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .product-category__title {
+            font-size: 2rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .product-category__title-link {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .product-category__title-link:hover {
+            color: rgba(186, 157, 255, 1);
+            transform: translateX(4px);
+        }
+        
+        .product-category__title-link::after {
+            content: ' →';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            margin-left: 0.5rem;
+        }
+        
+        .product-category__title-link:hover::after {
+            opacity: 1;
+        }
+        
+        .product-category__count {
+            background: var(--primary-purple);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
         }
         
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
-            padding: 3rem 2rem;
-            max-width: 1440px;
-            margin: 0 auto;
         }
         
         .cmp-product-cards__item {
-            background: var(--white);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
         
         .cmp-product-cards__item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-purple);
+            box-shadow: 0 12px 40px rgba(79, 0, 181, 0.4);
+            background: rgba(255, 255, 255, 0.12);
         }
         
         .cmp-product-cards__img-container {
             width: 100%;
-            height: 200px;
+            height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--light-gray);
-            padding: 2rem;
+            background: #ffffff;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cmp-product-cards__img-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+            pointer-events: none;
         }
         
         .cmp-product-cards__img-container img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 95%;
+            max-height: 95%;
+            width: auto;
+            height: auto;
             object-fit: contain;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        
+        .cmp-product-cards__item:hover .cmp-product-cards__img-container img {
+            transform: scale(1.05);
         }
         
         .cmp-product-cards__item-content {
             padding: 2rem;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.08) 100%);
         }
         
         .cmp-product-cards__item-title {
             font-size: 1.5rem;
-            color: var(--primary-brand-color);
+            color: var(--white);
             margin-bottom: 1rem;
+            font-weight: 600;
         }
         
         .cmp-product-cards__item-description {
-            color: var(--text-gray);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
@@ -118,13 +234,15 @@
         
         .cmp-product-cards__item-specs dt {
             font-weight: 600;
-            color: var(--primary-brand-color);
+            color: rgba(186, 157, 255, 1);
             margin-top: 0.5rem;
+            font-size: 0.95rem;
         }
         
         .cmp-product-cards__item-specs dd {
-            color: var(--text-gray);
+            color: rgba(255, 255, 255, 0.9);
             margin-left: 0;
+            font-size: 0.9rem;
         }
         
         .cmp-product-cards__item-cta {
@@ -137,6 +255,62 @@
             flex: 1;
             min-width: 120px;
             text-align: center;
+        }
+        
+        .cmp-hero {
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .cmp-hero__background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .cmp-hero__background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cmp-hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        
+        .cmp-hero__content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cmp-hero__title {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .cmp-hero__description {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -171,8 +345,9 @@
     <!-- Hero Section -->
     <section class="cmp-hero">
         <div class="cmp-hero__background-image cmp-hero__background-image--desktop">
-            <img src="https://s7d9.scene7.com/is/image/Solidigm/DataCenter_Hero?fmt=avif" alt="Data Center SSDs">
+            <img src="../site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="Data Center SSDs">
         </div>
+        <div class="cmp-hero__overlay"></div>
         <div class="cmp-hero__content">
             <h1 class="cmp-hero__title">Modernize Your Data Center</h1>
             <div class="cmp-hero__description">
@@ -181,190 +356,294 @@
         </div>
     </section>
 
-    <!-- Series List -->
-    <section class="series-list">
-        <a href="data-center/d7.html" class="series-list__serie">
-            <img src="https://s7d9.scene7.com/is/image/Solidigm/DataCenter_BladeImage_D7?fmt=avif" alt="D7 Series" class="series-list__serie__image">
-            <div class="series-list__serie__text">
-                <h3 class="series-list__serie__text__title">SSD D7 Series</h3>
-                <p class="series-list__serie__text__description">
-                    Our highest-performing SSDs, engineered for the most demanding workloads.
-                </p>
-            </div>
-        </a>
+    <!-- Series Highlight Section -->
+    <section class="series-highlight">
+        <h2 class="series-highlight__title">Our Product Families</h2>
+        <div class="series-highlight__grid">
+            <a href="data-center/d7.html" class="series-highlight__card">
+                <img src="../site/products/data-center/d7/ps1010/blade-images/mobile-images/d7-ps1010-gen-5-pcie-ssd-data-center-ssd-mobile.jpg" alt="D7 Series" class="series-highlight__card-image">
+                <div class="series-highlight__card-content">
+                    <h3 class="series-highlight__card-title">SSD D7 Series</h3>
+                    <p class="series-highlight__card-description">
+                        Our highest-performing SSDs, engineered for the most demanding workloads. PCIe 5.0 and 4.0 solutions for extreme performance.
+                    </p>
+                </div>
+            </a>
 
-        <a href="data-center/d5.html" class="series-list__serie">
-            <img src="https://s7d9.scene7.com/is/image/Solidigm/dc-d5?fmt=png-alpha" alt="D5 Series" class="series-list__serie__image">
-            <div class="series-list__serie__text">
-                <h3 class="series-list__serie__text__title">SSD D5 Series</h3>
-                <p class="series-list__serie__text__description">
-                    Hyper-dense, cost-efficient SSDs optimized for read intensive workloads.
-                </p>
-            </div>
-        </a>
+            <a href="data-center/d5.html" class="series-highlight__card">
+                <img src="../site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="D5 Series" class="series-highlight__card-image">
+                <div class="series-highlight__card-content">
+                    <h3 class="series-highlight__card-title">SSD D5 Series</h3>
+                    <p class="series-highlight__card-description">
+                        Hyper-dense, cost-efficient SSDs optimized for read intensive workloads. Up to 122TB capacity for maximum storage density.
+                    </p>
+                </div>
+            </a>
 
-        <a href="data-center/d3.html" class="series-list__serie">
-            <img src="https://s7d9.scene7.com/is/image/Solidigm/DC-D3?fmt=png-alpha" alt="D3 Series" class="series-list__serie__image">
-            <div class="series-list__serie__text">
-                <h3 class="series-list__serie__text__title">SSD D3 Series</h3>
-                <p class="series-list__serie__text__description">
-                    SSDs designed to improve storage performance and costs on legacy SATA infrastructure.
-                </p>
-            </div>
-        </a>
+            <a href="data-center/d3.html" class="series-highlight__card">
+                <img src="../site/products/data-center/d7/p5810/thumbnails/form-factors/u-2/solidigm-d7-p5810-u-2-ssd-thumbmail-image.jpg" alt="D3 Series" class="series-highlight__card-image">
+                <div class="series-highlight__card-content">
+                    <h3 class="series-highlight__card-title">SSD D3 Series</h3>
+                    <p class="series-highlight__card-description">
+                        SSDs designed to improve storage performance and costs on legacy SATA infrastructure. Perfect for HDD replacement.
+                    </p>
+                </div>
+            </a>
+        </div>
     </section>
 
-    <!-- Products Grid -->
-    <section>
-        <div class="container" style="padding: 2rem;">
-            <h2 class="cmp-carousel-title">All Data Center Products</h2>
+    <!-- All Products Section -->
+    <section class="products-section">
+        <h2 class="products-section__title">All Data Center Products</h2>
+        
+        <!-- D7 Series Products -->
+        <div class="product-category">
+            <div class="product-category__header">
+                <h3 class="product-category__title">
+                    <a href="data-center/d7.html" class="product-category__title-link">D7 Series</a>
+                </h3>
+                <span class="product-category__count">5 Products</span>
+            </div>
+            <div class="products-grid">
+                <!-- D7-PS1010 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://s7d9.scene7.com/is/image/Solidigm/d7-ps1010se-d7-PS1030me-e3s?fmt=avif" alt="D7-PS1010">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D7-PS1010</h3>
+                        <p class="cmp-product-cards__item-description">Class-leading PCIe 5.0 performance with standard endurance and capacities up to 15.36TB, designed to accelerate mainstream workloads.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>PCIe 5.0 x4, NVMe</dd>
+                            <dt>Form Factor</dt>
+                            <dd>E3.S 7.5mm / U.2 15mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>15.36TB - 1.6TB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d7/ps1010.html" class="solidigm-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D7-PS1030 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://s7d9.scene7.com/is/image/Solidigm/d7-ps1010se-d7-PS1030me-e3s-1?fmt=avif" alt="D7-PS1030">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D7-PS1030</h3>
+                        <p class="cmp-product-cards__item-description">Discover Gen5 PCIe 5.0 performance with mid-endurance and capacities up to 12.8TB, designed to accelerate write-centric and mixed workloads.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>PCIe 5.0 x4, NVMe</dd>
+                            <dt>Form Factor</dt>
+                            <dd>E3.S 7.5mm / U.2 15mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>12.8TB - 1.6TB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d7/ps1030.html" class="solidigm-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D7-P5520 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d7-p5520-u-2-ssd?fmt=avif" alt="D7-P5520">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D7-P5520</h3>
+                        <p class="cmp-product-cards__item-description">Discover the D7-P5520 standard-endurance PCIe 4.0 SSDs with capacities up to 15.36 TB, designed for read-intensive workloads.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>PCIe 4.0 x4, NVMe</dd>
+                            <dt>Form Factor</dt>
+                            <dd>U.2 15mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>15.36TB - 1.6TB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d7/p5520.html" class="solidigm-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D7-P5620 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d7-p5620-u-2-ssd-1?fmt=avif" alt="D7-P5620">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D7-P5620</h3>
+                        <p class="cmp-product-cards__item-description">Discover the D7-P5620 mid-endurance PCIe 4.0 SSDs with capacities up to 12.8 TB, designed for mixed-workload applications.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>PCIe 4.0 x4, NVMe</dd>
+                            <dt>Form Factor</dt>
+                            <dd>U.2 15mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>12.8TB - 1.6TB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d7/p5620.html" class="solidigm-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D7-P5810 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d7-p5810-u-2-ssd-thumbmail-image?fmt=avif" alt="D7-P5810">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D7-P5810</h3>
+                        <p class="cmp-product-cards__item-description">Ultra-high endurance PCIe 4.0 SSD with up to 50 DWPD, engineered for extreme write-intensive workloads and mission-critical applications.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>PCIe 4.0 x4, NVMe</dd>
+                            <dt>Form Factor</dt>
+                            <dd>U.2 15mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>3.2TB - 800GB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d7/p5810.html" class="solidigm-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="products-grid">
-            <!-- D7 Series Products -->
-            <div class="cmp-product-cards__item">
-                <div class="cmp-product-cards__img-container">
-                    <img src="https://s7d9.scene7.com/is/image/Solidigm/d7-ps1010se-d7-PS1030me-e3s?fmt=avif" alt="D7-PS1010">
+
+        <!-- D5 Series Products -->
+        <div class="product-category">
+            <div class="product-category__header">
+                <h3 class="product-category__title">
+                    <a href="data-center/d5.html" class="product-category__title-link">D5 Series</a>
+                </h3>
+                <span class="product-category__count">3 Products</span>
+            </div>
+            <div class="products-grid">
+                <!-- D5-P5336 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d5-p5336-u-2-ssd?fmt=avif" alt="D5-P5336">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D5-P5336</h3>
+                        <p class="cmp-product-cards__item-description">Optimized for the edge to the core, the D5-P5336 is a hyper-scalable, cost-effective solution that lets you efficiently accelerate data. Up to 122TB capacity.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>PCIe 4.0 x4, NVMe</dd>
+                            <dt>Form Factor</dt>
+                            <dd>E1.L 9.5mm / U.2 15mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>122TB - 7.68TB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d5/p5336.html" class="solidigm-btn">View Details</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="cmp-product-cards__item-content">
-                    <h3 class="cmp-product-cards__item-title">D7-PS1010</h3>
-                    <p class="cmp-product-cards__item-description">Class-leading PCIe 5.0 performance with standard endurance and capacities up to 15.36TB, designed to accelerate mainstream workloads.</p>
-                    <dl class="cmp-product-cards__item-specs">
-                        <dt>Interface</dt>
-                        <dd>PCIe 5.0 x4, NVMe</dd>
-                        <dt>Form Factor</dt>
-                        <dd>E3.S 7.5mm / U.2 15mm</dd>
-                        <dt>Capacity</dt>
-                        <dd>15.36TB - 1.6TB</dd>
-                    </dl>
-                    <div class="cmp-product-cards__item-cta">
-                        <a href="data-center/d7/ps1010.html" class="solidigm-btn">View Details</a>
+
+                <!-- D5-P5430 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://www.solidigm.com/content/dam/solidigm/en/site/products/data-center/d5/p5430/thumbnails/solidigm-d5-p5430-u2.jpg?fmt=avif" alt="D5-P5430">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D5-P5430</h3>
+                        <p class="cmp-product-cards__item-description">Discover the hyper-dense D5-P5430 QLC SSD, a PCIe 4.0 drive with capacities up to 30.72TB. TLC-level performance for mainstream, read-intensive workloads.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>PCIe 4.0 x4, NVMe</dd>
+                            <dt>Form Factor</dt>
+                            <dd>E1.S 9.5mm / U.2 15mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>30.72TB - 7.68TB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d5/p5430.html" class="solidigm-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D5-P5316 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://www.solidigm.com/content/dam/solidigm/en/site/products/data-center/d5/p5316/thumbnails/form-factor-features/u-2-15mm/solidigm-d5-p5316-u-2-ssd.jpg?fmt=avif" alt="D5-P5316">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D5-P5316</h3>
+                        <p class="cmp-product-cards__item-description">Discover the D5-P5316, highly efficient, read-optimized PCIe 4.0 drives with capacities up to 30.72 TB, designed for read-intensive and sequential workloads.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>PCIe 4.0 x4, NVMe</dd>
+                            <dt>Form Factor</dt>
+                            <dd>U.2 15mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>30.72TB - 7.68TB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d5/p5316.html" class="solidigm-btn">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="cmp-product-cards__item">
-                <div class="cmp-product-cards__img-container">
-                    <img src="https://s7d9.scene7.com/is/image/Solidigm/d7-ps1010se-d7-PS1030me-e3s-1?fmt=avif" alt="D7-PS1030">
-                </div>
-                <div class="cmp-product-cards__item-content">
-                    <h3 class="cmp-product-cards__item-title">D7-PS1030</h3>
-                    <p class="cmp-product-cards__item-description">Discover Gen5 PCIe 5.0 performance with mid-endurance and capacities up to 12.8TB, designed to accelerate write-centric and mixed workloads.</p>
-                    <dl class="cmp-product-cards__item-specs">
-                        <dt>Interface</dt>
-                        <dd>PCIe 5.0 x4, NVMe</dd>
-                        <dt>Form Factor</dt>
-                        <dd>E3.S 7.5mm / U.2 15mm</dd>
-                        <dt>Capacity</dt>
-                        <dd>12.8TB - 1.6TB</dd>
-                    </dl>
-                    <div class="cmp-product-cards__item-cta">
-                        <a href="data-center/d7/ps1030.html" class="solidigm-btn">View Details</a>
+        <!-- D3 Series Products -->
+        <div class="product-category">
+            <div class="product-category__header">
+                <h3 class="product-category__title">
+                    <a href="data-center/d3.html" class="product-category__title-link">D3 Series</a>
+                </h3>
+                <span class="product-category__count">2 Products</span>
+            </div>
+            <div class="products-grid">
+                <!-- D3-S4520 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://www.solidigm.com/content/dam/solidigm/en/site/products/data-center/d3/s4520/thumbnails/solidigm-d3-s4620-2-5-sata-ssd.jpg?fmt=avif" alt="D3-S4520">
+                    </div>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D3-S4520</h3>
+                        <p class="cmp-product-cards__item-description">Standard-endurance SATA SSDs up to 7.68TB, designed to increase server efficiency and boost IOPS/TB performance over legacy HDDs for cloud data storage.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>SATA 3.0 6Gb/s</dd>
+                            <dt>Form Factor</dt>
+                            <dd>2.5" 7mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>7.68TB - 480GB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d3/s4520.html" class="solidigm-btn">View Details</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="cmp-product-cards__item">
-                <div class="cmp-product-cards__img-container">
-                    <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d7-p5520-u-2-ssd?fmt=avif" alt="D7-P5520">
-                </div>
-                <div class="cmp-product-cards__item-content">
-                    <h3 class="cmp-product-cards__item-title">D7-P5520</h3>
-                    <p class="cmp-product-cards__item-description">Discover the D7-P5520 standard-endurance PCIe 4.0 SSDs with capacities up to 15.36 TB, designed for read-intensive workloads.</p>
-                    <dl class="cmp-product-cards__item-specs">
-                        <dt>Interface</dt>
-                        <dd>PCIe 4.0 x4, NVMe</dd>
-                        <dt>Form Factor</dt>
-                        <dd>U.2 15mm</dd>
-                        <dt>Capacity</dt>
-                        <dd>15.36TB - 1.6TB</dd>
-                    </dl>
-                    <div class="cmp-product-cards__item-cta">
-                        <a href="data-center/d7/p5520.html" class="solidigm-btn">View Details</a>
+                <!-- D3-S4620 -->
+                <div class="cmp-product-cards__item">
+                    <div class="cmp-product-cards__img-container">
+                        <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d3-s4620-2-5-sata-ssd-3?fmt=avif" alt="D3-S4620">
                     </div>
-                </div>
-            </div>
-
-            <div class="cmp-product-cards__item">
-                <div class="cmp-product-cards__img-container">
-                    <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d7-p5620-u-2-ssd-1?fmt=avif" alt="D7-P5620">
-                </div>
-                <div class="cmp-product-cards__item-content">
-                    <h3 class="cmp-product-cards__item-title">D7-P5620</h3>
-                    <p class="cmp-product-cards__item-description">Discover the D7-P5620 mid-endurance PCIe 4.0 SSDs with capacities up to 12.8 TB, designed for mixed-workload applications.</p>
-                    <dl class="cmp-product-cards__item-specs">
-                        <dt>Interface</dt>
-                        <dd>PCIe 4.0 x4, NVMe</dd>
-                        <dt>Form Factor</dt>
-                        <dd>U.2 15mm</dd>
-                        <dt>Capacity</dt>
-                        <dd>12.8TB - 1.6TB</dd>
-                    </dl>
-                    <div class="cmp-product-cards__item-cta">
-                        <a href="data-center/d7/p5620.html" class="solidigm-btn">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- D5 Series Products -->
-            <div class="cmp-product-cards__item">
-                <div class="cmp-product-cards__img-container">
-                    <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d5-p5336-u-2-ssd?fmt=avif" alt="D5-P5336">
-                </div>
-                <div class="cmp-product-cards__item-content">
-                    <h3 class="cmp-product-cards__item-title">D5-P5336</h3>
-                    <p class="cmp-product-cards__item-description">Optimized for the edge to the core, the D5-P5336 is a hyper-scalable, cost-effective solution that lets you efficiently accelerate data. Up to 122TB capacity.</p>
-                    <dl class="cmp-product-cards__item-specs">
-                        <dt>Interface</dt>
-                        <dd>PCIe 4.0 x4, NVMe</dd>
-                        <dt>Form Factor</dt>
-                        <dd>E1.L 9.5mm / U.2 15mm</dd>
-                        <dt>Capacity</dt>
-                        <dd>122TB - 7.68TB</dd>
-                    </dl>
-                    <div class="cmp-product-cards__item-cta">
-                        <a href="data-center/d5/p5336.html" class="solidigm-btn">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cmp-product-cards__item">
-                <div class="cmp-product-cards__img-container">
-                    <img src="https://s7d9.scene7.com/is/image/Solidigm/soildigm-d5-p5430-e1s-3?fmt=avif" alt="D5-P5430">
-                </div>
-                <div class="cmp-product-cards__item-content">
-                    <h3 class="cmp-product-cards__item-title">D5-P5430</h3>
-                    <p class="cmp-product-cards__item-description">Discover the hyper-dense D5-P5430 QLC SSD, a PCIe 4.0 drive with capacities up to 30.72TB. TLC-level performance for mainstream, read-intensive workloads.</p>
-                    <dl class="cmp-product-cards__item-specs">
-                        <dt>Interface</dt>
-                        <dd>PCIe 4.0 x4, NVMe</dd>
-                        <dt>Form Factor</dt>
-                        <dd>E1.S 9.5mm / U.2 15mm</dd>
-                        <dt>Capacity</dt>
-                        <dd>30.72TB - 7.68TB</dd>
-                    </dl>
-                    <div class="cmp-product-cards__item-cta">
-                        <a href="data-center/d5/p5430.html" class="solidigm-btn">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cmp-product-cards__item">
-                <div class="cmp-product-cards__img-container">
-                    <img src="https://s7d9.scene7.com/is/image/Solidigm/solidigm-d5-p5316-u-2-ssd?fmt=avif" alt="D5-P5316">
-                </div>
-                <div class="cmp-product-cards__item-content">
-                    <h3 class="cmp-product-cards__item-title">D5-P5316</h3>
-                    <p class="cmp-product-cards__item-description">Discover the D5-P5316, highly efficient, read-optimized PCIe 4.0 drives with capacities up to 30.72 TB, designed for read-intensive and sequential workloads.</p>
-                    <dl class="cmp-product-cards__item-specs">
-                        <dt>Interface</dt>
-                        <dd>PCIe 4.0 x4, NVMe</dd>
-                        <dt>Form Factor</dt>
-                        <dd>U.2 15mm</dd>
-                        <dt>Capacity</dt>
-                        <dd>30.72TB - 7.68TB</dd>
-                    </dl>
-                    <div class="cmp-product-cards__item-cta">
-                        <a href="data-center/d5/p5316.html" class="solidigm-btn">View Details</a>
+                    <div class="cmp-product-cards__item-content">
+                        <h3 class="cmp-product-cards__item-title">D3-S4620</h3>
+                        <p class="cmp-product-cards__item-description">Mid-endurance SATA SSDs up to 3.84TB, designed to increase server efficiency and deliver higher IOPS/TB than legacy HDDs for data center workloads.</p>
+                        <dl class="cmp-product-cards__item-specs">
+                            <dt>Interface</dt>
+                            <dd>SATA 3.0 6Gb/s</dd>
+                            <dt>Form Factor</dt>
+                            <dd>2.5" 7mm</dd>
+                            <dt>Capacity</dt>
+                            <dd>3.84TB - 480GB</dd>
+                        </dl>
+                        <div class="cmp-product-cards__item-cta">
+                            <a href="data-center/d3/s4620.html" class="solidigm-btn">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -372,11 +651,11 @@
     </section>
 
     <!-- Solutions Blade -->
-    <section class="cmp-blade" style="background-color: var(--light-gray); margin-top: 4rem;">
+    <section class="cmp-blade" style="background-color: rgba(255, 255, 255, 0.1); margin-top: 4rem; backdrop-filter: blur(10px);">
         <div class="cmp-blade__content">
-            <h2 class="cmp-blade__title">SSDs Optimized for AI</h2>
+            <h2 class="cmp-blade__title" style="color: var(--white);">SSDs Optimized for AI</h2>
             <div class="cmp-blade__description">
-                <p>From ingesting and preparing data to training and deploying your model at scale, great storage keeps GPUs busy and shapes overall AI developer and user experience. If you're looking for density, power efficiency, reliability, and performance, look no further.</p>
+                <p style="color: rgba(255, 255, 255, 0.9);">From ingesting and preparing data to training and deploying your model at scale, great storage keeps GPUs busy and shapes overall AI developer and user experience. If you're looking for density, power efficiency, reliability, and performance, look no further.</p>
                 <span class="cmp-blade__description--border"></span>
             </div>
             <div class="cmp-blade__cta-container">
@@ -384,7 +663,7 @@
             </div>
         </div>
         <div class="cmp-blade__media">
-            <img src="https://s7d9.scene7.com/is/image/Solidigm/Solidigm-AI-Products-Series%20Images-Blade?fmt=avif" alt="AI Optimized SSDs">
+            <img src="../site/products/data-center/d7/ps1010/blade-images/mobile-images/d7-ps1010-gen-5-pcie-ssd-data-center-ssd-mobile.jpg" alt="AI Optimized SSDs">
         </div>
     </section>
 
@@ -428,4 +707,3 @@
     <script src="../assets/js/main.js"></script>
 </body>
 </html>
-
