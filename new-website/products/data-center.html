@@ -146,12 +146,14 @@
                 display: none !important;
                 pointer-events: none !important;
                 visibility: hidden !important;
+                z-index: -1 !important;
             }
             
             .mobile-menu-overlay.active {
                 display: block !important;
                 pointer-events: auto !important;
                 visibility: visible !important;
+                z-index: 998 !important;
             }
             
             .cmp-navigation__menu-mid {
@@ -220,6 +222,9 @@
             cursor: pointer;
             -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
             touch-action: manipulation;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
             z-index: 1000;
             pointer-events: auto !important;
         }
@@ -985,10 +990,37 @@
         // 确保系列卡片链接可点击（修复移动端点击问题）
         (function() {
             const seriesCards = document.querySelectorAll('.series-highlight__card');
+            const menuOverlay = document.getElementById('mobileMenuOverlay');
+            
+            // 确保遮罩层在非激活状态下不干扰
+            if (menuOverlay && !menuOverlay.classList.contains('active')) {
+                menuOverlay.style.display = 'none';
+                menuOverlay.style.pointerEvents = 'none';
+                menuOverlay.style.visibility = 'hidden';
+                menuOverlay.style.zIndex = '-1';
+            }
+            
             seriesCards.forEach(card => {
                 // 确保链接本身可点击
                 card.style.pointerEvents = 'auto';
                 card.style.cursor = 'pointer';
+                card.style.zIndex = '1000';
+                card.style.position = 'relative';
+                
+                // 添加触摸事件监听器（移动端）
+                card.addEventListener('touchstart', function(e) {
+                    // 允许触摸事件
+                    e.stopPropagation();
+                }, { passive: true });
+                
+                card.addEventListener('touchend', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && !href.startsWith('#')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.location.href = href;
+                    }
+                }, { passive: false });
                 
                 // 添加点击事件监听器作为备用
                 card.addEventListener('click', function(e) {
@@ -996,6 +1028,7 @@
                     if (href && !href.startsWith('#')) {
                         // 如果链接存在，确保跳转
                         e.preventDefault();
+                        e.stopPropagation();
                         window.location.href = href;
                     }
                 }, true);
@@ -1006,6 +1039,23 @@
                     child.style.pointerEvents = 'none';
                 });
             });
+            
+            // 监听遮罩层状态变化
+            if (menuOverlay) {
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                            if (!menuOverlay.classList.contains('active')) {
+                                menuOverlay.style.display = 'none';
+                                menuOverlay.style.pointerEvents = 'none';
+                                menuOverlay.style.visibility = 'hidden';
+                                menuOverlay.style.zIndex = '-1';
+                            }
+                        }
+                    });
+                });
+                observer.observe(menuOverlay, { attributes: true });
+            }
         })();
     </script>
 </body>
