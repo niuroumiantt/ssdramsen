@@ -966,6 +966,23 @@
                 mobileMenu.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                
+                // 切换后确保遮罩层状态正确
+                if (menuOverlay.classList.contains('active')) {
+                    menuOverlay.style.display = 'block';
+                    menuOverlay.style.width = '100%';
+                    menuOverlay.style.height = '100%';
+                    menuOverlay.style.visibility = 'visible';
+                    menuOverlay.style.pointerEvents = 'auto';
+                    menuOverlay.style.zIndex = '998';
+                } else {
+                    menuOverlay.style.display = 'none';
+                    menuOverlay.style.width = '0';
+                    menuOverlay.style.height = '0';
+                    menuOverlay.style.visibility = 'hidden';
+                    menuOverlay.style.pointerEvents = 'none';
+                    menuOverlay.style.zIndex = '-1';
+                }
             }
             
             function closeMenu() {
@@ -973,6 +990,14 @@
                 mobileMenu.classList.remove('active');
                 menuOverlay.classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // 关闭时确保遮罩层完全不占用空间
+                menuOverlay.style.display = 'none';
+                menuOverlay.style.width = '0';
+                menuOverlay.style.height = '0';
+                menuOverlay.style.visibility = 'hidden';
+                menuOverlay.style.pointerEvents = 'none';
+                menuOverlay.style.zIndex = '-1';
             }
             
             if (menuToggle) {
