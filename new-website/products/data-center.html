@@ -121,10 +121,12 @@
             z-index: 999;
             opacity: 0;
             transition: opacity 0.3s ease;
+            pointer-events: none;
         }
         
         .mobile-menu-overlay.active {
             opacity: 1;
+            pointer-events: auto;
         }
         
         /* 响应式：移动端显示菜单按钮 */
@@ -139,10 +141,23 @@
             
             .mobile-menu-overlay {
                 display: block;
+                pointer-events: none;
+            }
+            
+            .mobile-menu-overlay.active {
+                pointer-events: auto;
             }
             
             .cmp-navigation__menu-mid {
                 display: none !important;
+            }
+            
+            /* 确保链接在移动端可点击 */
+            .series-highlight__card,
+            .cmp-product-cards__item a {
+                position: relative;
+                z-index: 100;
+                pointer-events: auto !important;
             }
         }
         
@@ -176,6 +191,22 @@
             border: 2px solid rgba(255, 255, 255, 0.1);
             display: block;
             text-decoration: none;
+            position: relative;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+            touch-action: manipulation;
+            z-index: 100;
+            pointer-events: auto !important;
+        }
+        
+        .series-highlight__card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
         }
         
         .series-highlight__card:hover {
@@ -184,15 +215,32 @@
             box-shadow: 0 8px 32px rgba(79, 0, 181, 0.3);
         }
         
+        .series-highlight__card:active {
+            transform: translateY(-4px);
+        }
+        
         .series-highlight__card-image {
             width: 100%;
             height: 250px;
             object-fit: cover;
             background: rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+            user-select: none;
         }
         
         .series-highlight__card-content {
             padding: 2rem;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        .series-highlight__card * {
+            pointer-events: none;
+        }
+        
+        /* 确保链接本身可点击 */
+        .series-highlight__card {
+            pointer-events: auto !important;
         }
         
         .series-highlight__card-title {
@@ -286,6 +334,11 @@
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+            touch-action: manipulation;
+            z-index: 1;
         }
         
         .cmp-product-cards__item:hover {
@@ -293,6 +346,10 @@
             border-color: var(--primary-purple);
             box-shadow: 0 12px 40px rgba(79, 0, 181, 0.4);
             background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .cmp-product-cards__item:active {
+            transform: translateY(-2px);
         }
         
         .cmp-product-cards__img-container {
@@ -896,6 +953,32 @@
                     } else {
                         closeMenu();
                     }
+                });
+            });
+        })();
+        
+        // 确保系列卡片链接可点击（修复移动端点击问题）
+        (function() {
+            const seriesCards = document.querySelectorAll('.series-highlight__card');
+            seriesCards.forEach(card => {
+                // 确保链接本身可点击
+                card.style.pointerEvents = 'auto';
+                card.style.cursor = 'pointer';
+                
+                // 添加点击事件监听器作为备用
+                card.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && !href.startsWith('#')) {
+                        // 如果链接存在，确保跳转
+                        e.preventDefault();
+                        window.location.href = href;
+                    }
+                }, true);
+                
+                // 确保所有子元素不阻止点击
+                const children = card.querySelectorAll('*');
+                children.forEach(child => {
+                    child.style.pointerEvents = 'none';
                 });
             });
         })();
