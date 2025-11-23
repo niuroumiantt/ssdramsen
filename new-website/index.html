@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="At Solidigm, we focus on exceptional innovation in NAND flash memory solutions. Solidigm technology unlocks data's unlimited potential for customers with the most advanced SSD data storage products on the market today.">
-    <title>World-Class SSD Data Storage Solutions | Solidigm Technology</title>
+    <meta name="description" content="SSDRAMS - Your trusted partner for enterprise storage and memory solutions. We represent leading brands in the data center industry.">
+    <title>SSDRAMS - Enterprise Storage & Memory Solutions Distributor</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,296 +13,563 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/main.css">
-    
-    <!-- Splide Carousel CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <style>
+        body {
+            background: #ffffff;
+            color: #1d1d1f;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .cmp-navigation {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .cmp-navigation__menu-text {
+            color: #1d1d1f;
+        }
+        
+        .company-hero {
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            background: #f5f5f7;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .company-hero__content {
+            max-width: 900px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .company-hero__title {
+            font-size: 2.5rem;
+            color: #1d1d1f;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        .company-hero__subtitle {
+            font-size: 1.25rem;
+            color: #86868b;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+        
+        .company-hero__description {
+            font-size: 1rem;
+            color: #1d1d1f;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        
+        .brands-section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+        
+        .brands-section__title {
+            font-size: 3rem;
+            color: #1d1d1f;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        .brands-section__subtitle {
+            font-size: 1.25rem;
+            color: #86868b;
+            text-align: center;
+            margin-bottom: 5rem;
+            font-weight: 400;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        @media (max-width: 1200px) {
+            .brands-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .brand-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1rem 1rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            height: 100%;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-color: rgba(0, 0, 0, 0.12);
+        }
+        
+        .brand-card__logo {
+            width: 100%;
+            flex: 1;
+            min-height: 0;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .brand-card:hover .brand-card__logo {
+            background: #fafafa;
+            border-color: rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+        }
+        
+        .brand-card__logo img {
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            filter: none;
+        }
+        
+        .brand-card__content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 0.75rem;
+        }
+        
+        .brand-card__name {
+            font-size: 1.125rem;
+            color: #1d1d1f;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .brand-card__description {
+            font-size: 0.8125rem;
+            color: #86868b;
+            line-height: 1.4;
+            font-weight: 400;
+            flex: 1;
+        }
+        
+        .brand-card__arrow {
+            margin-top: 1.5rem;
+            color: #0071e3;
+            font-size: 1.125rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .brand-card:hover .brand-card__arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+        
+        .about-section {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: #f5f5f7;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            width: 100%;
+        }
+        
+        .about-section__container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        
+        .about-section__title {
+            font-size: 2.5rem;
+            color: #1d1d1f;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        .about-section__content {
+            font-size: 1rem;
+            color: #1d1d1f;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        
+        .about-section__content p {
+            margin-bottom: 1rem;
+        }
+        
+        .brand-category {
+            margin-bottom: 5rem;
+        }
+        
+        .brand-category__title {
+            font-size: 2rem;
+            color: #1d1d1f;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+        
+        .footer {
+            background: #f5f5f7;
+            border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer-content__title {
+            color: #1d1d1f;
+        }
+        
+        .footer-content__links__link {
+            color: #86868b;
+        }
+        
+        .footer-content__links__link:hover {
+            color: #0071e3;
+        }
+        
+        .footer-content__copyright {
+            color: #86868b;
+        }
+    </style>
 </head>
-<body class="homepage">
+<body>
     <!-- Navigation Header -->
     <header>
         <nav class="cmp-navigation">
             <div class="cmp-navigation__container">
                 <div class="cmp-navigation__logo">
                     <a href="index.html" title="Home" class="cmp-navigation__logo-link">
-                        <img src="https://www.solidigm.com/content/dam/solidigm/en/brand/logo-white.png" alt="Solidigm logo" class="cmp-navigation__logo-image">
+                        <span style="color: #1d1d1f; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;">SSDRAMS</span>
                     </a>
                 </div>
                 <div class="cmp-navigation__menu-mid d-none d-md-block">
                     <ul class="cmp-navigation__menu-list">
                         <li class="cmp-navigation__menu-items">
+                            <a href="index.html" class="cmp-navigation__menu-links">
+                                <div class="cmp-navigation__menu-text">Home</div>
+                            </a>
+                        </li>
+                        <li class="cmp-navigation__menu-items">
                             <a href="products/data-center.html" class="cmp-navigation__menu-links">
-                                <div class="cmp-navigation__menu-text">Product</div>
+                                <div class="cmp-navigation__menu-text">Products</div>
                             </a>
                         </li>
                         <li class="cmp-navigation__menu-items">
-                            <a href="solutions/artificial-intelligence.html" class="cmp-navigation__menu-links">
-                                <div class="cmp-navigation__menu-text">Solutions</div>
+                            <a href="#about" class="cmp-navigation__menu-links">
+                                <div class="cmp-navigation__menu-text">About</div>
                             </a>
                         </li>
                         <li class="cmp-navigation__menu-items">
-                            <a href="solutions/edge-storage.html" class="cmp-navigation__menu-links">
-                                <div class="cmp-navigation__menu-text">Edge Storage</div>
-                            </a>
-                        </li>
-                        <li class="cmp-navigation__menu-items">
-                            <a href="#insights" class="cmp-navigation__menu-links">
-                                <div class="cmp-navigation__menu-text">Insights</div>
+                            <a href="#contact" class="cmp-navigation__menu-links">
+                                <div class="cmp-navigation__menu-text">Contact</div>
                             </a>
                         </li>
                     </ul>
-                </div>
-                <div class="cmp-navigation__menu-right">
-                    <div class="cmp-navigation__search">
-                        <button class="c-search__button" aria-label="Search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                            </svg>
-                        </button>
-                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Carousel -->
-    <section class="cmp-hero">
-        <div class="cmp-hero__background-image cmp-hero__background-image--desktop">
-            <img src="site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="PCIe 5.0 Performance">
-        </div>
-        <div class="cmp-hero__overlay"></div>
-        <div class="cmp-hero__content">
-            <h1 class="cmp-hero__title">PCIe 5.0 Performance Done Right</h1>
-            <div class="cmp-hero__description">
-                <p>Built to accelerate demanding workloads and power your AI data pipeline</p>
-            </div>
-            <div class="cmp-hero__cta-container">
-                <a href="products/data-center/d7/ps1010.html" class="solidigm-btn">D7-PS1010</a>
-                <a href="products/data-center/d7/ps1030.html" class="solidigm-btn">D7-PS1030</a>
-            </div>
+    <!-- Company Hero Section -->
+    <section class="company-hero">
+        <div class="company-hero__content">
+            <h1 class="company-hero__title">SSDRAMS</h1>
+            <p class="company-hero__subtitle">Your Trusted Partner for Enterprise Storage & Memory Solutions</p>
+            <p class="company-hero__description">
+                We are a leading distributor specializing in enterprise-grade storage and memory solutions. 
+                We partner with the world's most innovative technology companies to bring you cutting-edge 
+                products for data centers, cloud infrastructure, and enterprise applications.
+            </p>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="container" style="padding: 4rem 2rem;">
-        <h2 class="cmp-carousel-title">Featured Products</h2>
-        <div class="cmp-carousel splide" id="products-carousel">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="cmp-product-card">
-                            <a href="products/data-center/d7/p5520.html">
-                                <div class="cmp-product-card__div">
-                                    <div class="cmp-product-card__image">
-                                        <img src="site/products/data-center/d7/ps1010/blade-images/mobile-images/d7-ps1010-gen-5-pcie-ssd-data-center-ssd-mobile.jpg" alt="D7-P5520">
+    <!-- Brands Section -->
+    <section class="brands-section">
+        <h2 class="brands-section__title">Our Strategic Partners</h2>
+        <p class="brands-section__subtitle">Explore products from our trusted brand partners</p>
+        
+        <!-- Storage & Memory Brands -->
+        <div class="brand-category">
+            <h3 class="brand-category__title">Storage & Memory Solutions</h3>
+            <div class="brands-grid">
+                <!-- Solidigm -->
+                <a href="products/data-center.html" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/solidigm.png" alt="Solidigm" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.25rem; font-weight: 600;">SOLIDIGM</div>
                                     </div>
-                                    <h3 class="cmp-product-card__title">D7-P5520</h3>
-                                    <div class="cmp-product-card__description">
-                                        Discover the D7-P5520 standard-endurance PCIe 4.0 SSDs with capacities up to 15.36 TB, designed for read-intensive workloads.
-                                    </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">Solidigm</h4>
+                        <p class="brand-card__description">Enterprise SSDs for data centers, AI workloads, and cloud infrastructure</p>
+                        <div class="brand-card__arrow">→</div>
                                 </div>
                             </a>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="cmp-product-card">
-                            <a href="products/data-center/d5/p5430.html">
-                                <div class="cmp-product-card__div">
-                                    <div class="cmp-product-card__image">
-                                        <img src="site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="D5-P5430">
-                                    </div>
-                                    <h3 class="cmp-product-card__title">D5-P5430</h3>
-                                    <div class="cmp-product-card__description">
-                                        Discover the hyper-dense D5-P5430 QLC SSD, a PCIe 4.0 drive with capacities up to 30.72TB. TLC-level performance for mainstream, read-intensive workloads.
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="cmp-product-card">
-                            <a href="products/data-center/d5/p5336.html">
-                                <div class="cmp-product-card__div">
-                                    <div class="cmp-product-card__image">
-                                        <img src="site/products/data-center/d7/p5810/thumbnails/form-factors/u-2/solidigm-d7-p5810-u-2-ssd-thumbmail-image.jpg" alt="D5-P5336">
-                                    </div>
-                                    <h3 class="cmp-product-card__title">D5-P5336</h3>
-                                    <div class="cmp-product-card__description">
-                                        Optimized for the edge to the core, the D5-P5336 is a hyper-scalable, cost-effective solution that lets you efficiently accelerate data.
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="cmp-product-card">
-                            <a href="products/data-center/d7/p5620.html">
-                                <div class="cmp-product-card__div">
-                                    <div class="cmp-product-card__image">
-                                        <img src="site/products/data-center/d7/ps1010/blade-images/mobile-images/d7-ps1010-gen-5-pcie-ssd-data-center-ssd-mobile.jpg" alt="D7-P5620">
-                                    </div>
-                                    <h3 class="cmp-product-card__title">D7-P5620</h3>
-                                    <div class="cmp-product-card__description">
-                                        Discover the D7-P5620 mid-endurance PCIe 4.0 SSDs with capacities up to 12.8 TB, designed for mixed-workload applications.
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="cmp-product-card">
-                            <a href="products/data-center/d5/p5316.html">
-                                <div class="cmp-product-card__div">
-                                    <div class="cmp-product-card__image">
-                                        <img src="site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="D5-P5316">
-                                    </div>
-                                    <h3 class="cmp-product-card__title">D5-P5316</h3>
-                                    <div class="cmp-product-card__description">
-                                        Discover the D5-P5316, highly efficient, read-optimized PCIe 4.0 drives with capacities up to 30.72 TB, designed for read-intensive and sequential workloads.
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="splide__arrows">
-                <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous"></button>
-                <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next"></button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Solutions Blade -->
-    <section class="cmp-blade">
-        <div class="cmp-blade__media">
-            <img src="site/products/data-center/d7/ps1010/blade-images/mobile-images/d7-ps1010-gen-5-pcie-ssd-data-center-ssd-mobile.jpg" alt="Data Center Solutions">
-        </div>
-        <div class="cmp-blade__content">
-            <h2 class="cmp-blade__title">The Solidigm Data Center Advantage</h2>
-            <div class="cmp-blade__description">
-                From the data center core to the edge - we deliver best-in-class storage solutions to store your data. Scale faster and easier, so you can put your critical data into action.
-                <span class="cmp-blade__description--border"></span>
-            </div>
-            <div class="cmp-blade__cta-container">
-                <a href="products/data-center.html" class="solidigm-btn">Explore our products</a>
-            </div>
-        </div>
-    </section>
+                <!-- Samsung -->
+                <a href="https://www.samsung.com/semiconductor/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/samsung.png" alt="Samsung" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.5rem; font-weight: 600;">SAMSUNG</div>
+                        </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">Samsung</h4>
+                        <p class="brand-card__description">Memory and storage solutions for enterprise and data center applications</p>
+                        <div class="brand-card__arrow">→</div>
+                                    </div>
+                </a>
 
-    <!-- Insights Section -->
-    <section id="insights" class="cmp-article-list">
-        <div class="section-title--with-link">
-            <h2>Insights</h2>
-            <a href="products/technology.html">View all</a>
+                <!-- SK Hynix -->
+                <a href="https://www.skhynix.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/sk-hynix.png" alt="SK Hynix" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.25rem; font-weight: 600;">SK Hynix</div>
+                                    </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">SK Hynix</h4>
+                        <p class="brand-card__description">Advanced memory and storage technologies for next-generation computing</p>
+                        <div class="brand-card__arrow">→</div>
+                                </div>
+                            </a>
+
+                <!-- Micron -->
+                <a href="https://www.micron.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/micron.png" alt="Micron" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.5rem; font-weight: 600;">MICRON</div>
+                        </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">Micron</h4>
+                        <p class="brand-card__description">Memory and storage solutions driving innovation in data centers</p>
+                        <div class="brand-card__arrow">→</div>
+                                    </div>
+                </a>
+
+                <!-- KIOXIA -->
+                <a href="https://www.kioxia.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/kioxia.png" alt="KIOXIA" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.5rem; font-weight: 600;">KIOXIA</div>
+                                    </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">KIOXIA</h4>
+                        <p class="brand-card__description">Flash memory and SSD solutions for enterprise and consumer markets</p>
+                        <div class="brand-card__arrow">→</div>
+                                </div>
+                            </a>
+
+                <!-- Western Digital -->
+                <a href="https://www.westerndigital.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/western-digital.png" alt="Western Digital" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1rem; font-weight: 600;">Western Digital</div>
+                        </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">Western Digital</h4>
+                        <p class="brand-card__description">Data storage solutions for enterprise, cloud, and consumer applications</p>
+                        <div class="brand-card__arrow">→</div>
+                                </div>
+                            </a>
+
+                <!-- Seagate -->
+                <a href="https://www.seagate.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/seagate.png" alt="Seagate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.25rem; font-weight: 600;">SEAGATE</div>
+                        </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">Seagate</h4>
+                        <p class="brand-card__description">Data storage solutions for enterprise and cloud infrastructure</p>
+                        <div class="brand-card__arrow">→</div>
+                                </div>
+                            </a>
+            </div>
         </div>
-        <div class="cmp-article-list__articles-container">
-            <div class="cmp-article-list__article">
-                <a href="products/technology/antillion-driving-innovation-at-the-edge.html">
-                    <div class="cmp-article-list__article-image">
-                        <img src="site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="Article">
+
+        <!-- Computing & Infrastructure Brands -->
+        <div class="brand-category">
+            <h3 class="brand-category__title">Computing & Infrastructure</h3>
+            <div class="brands-grid">
+                <!-- Intel -->
+                <a href="https://www.intel.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/intel.png" alt="Intel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.5rem; font-weight: 600;">INTEL</div>
+        </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">Intel</h4>
+                        <p class="brand-card__description">Processors, memory, and storage solutions for data centers</p>
+                        <div class="brand-card__arrow">→</div>
+            </div>
+                </a>
+
+                <!-- AMD -->
+                <a href="https://www.amd.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/amd.png" alt="AMD" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.75rem; font-weight: 600;">AMD</div>
+            </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">AMD</h4>
+                        <p class="brand-card__description">High-performance processors and enterprise solutions</p>
+                        <div class="brand-card__arrow">→</div>
+        </div>
+                </a>
+
+                <!-- NVIDIA -->
+                <a href="https://www.nvidia.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/nvidia.png" alt="NVIDIA" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.5rem; font-weight: 600;">NVIDIA</div>
                     </div>
-                    <div class="cmp-article-list__article-content">
-                        <span class="cmp-article-list__article-category">Industry Solution</span>
-                        <h3 class="cmp-article-list__article-title">Reimagining Portable Wearable Solutions: Overcoming Locality Constraints With Antillion</h3>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">NVIDIA</h4>
+                        <p class="brand-card__description">AI computing and data center acceleration solutions</p>
+                        <div class="brand-card__arrow">→</div>
+                    </div>
+                </a>
+
+                <!-- Supermicro -->
+                <a href="https://www.supermicro.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/supermicro.png" alt="Supermicro" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1rem; font-weight: 600;">Supermicro</div>
+                    </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">Supermicro</h4>
+                        <p class="brand-card__description">Server and storage solutions for enterprise data centers</p>
+                        <div class="brand-card__arrow">→</div>
+                    </div>
+                </a>
+
+                <!-- Cisco -->
+                <a href="https://www.cisco.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/cisco.png" alt="Cisco" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.5rem; font-weight: 600;">CISCO</div>
+                    </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">Cisco</h4>
+                        <p class="brand-card__description">Networking and data center infrastructure solutions</p>
+                        <div class="brand-card__arrow">→</div>
+                    </div>
+                </a>
+
+                <!-- HPE -->
+                <a href="https://www.hpe.com/" target="_blank" rel="noopener" class="brand-card">
+                    <div class="brand-card__logo">
+                        <img src="assets/images/brands/hpe.png" alt="HPE" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color: #1d1d1f; font-size: 1.5rem; font-weight: 600;">HPE</div>
+                    </div>
+                    <div class="brand-card__content">
+                        <h4 class="brand-card__name">HPE</h4>
+                        <p class="brand-card__description">Enterprise computing and storage solutions</p>
+                        <div class="brand-card__arrow">→</div>
                     </div>
                 </a>
             </div>
-            <div class="cmp-article-list__article">
-                <a href="products/technology/solidigm-innovation-in-ssd-packaging-tech.html">
-                    <div class="cmp-article-list__article-image">
-                        <img src="site/products/data-center/d7/ps1010/blade-images/mobile-images/d7-ps1010-gen-5-pcie-ssd-data-center-ssd-mobile.jpg" alt="Article">
-                    </div>
-                    <div class="cmp-article-list__article-content">
-                        <h3 class="cmp-article-list__article-title">How Solidigm Drives the Foundation of Innovation in SSD Packaging Technology</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="cmp-article-list__article">
-                <a href="products/technology/solidigm-fully-liquid-cooled-ssd-solution-q-and-a.html">
-                    <div class="cmp-article-list__article-image">
-                        <img src="site/products/data-center/d7/p5810/thumbnails/form-factors/u-2/solidigm-d7-p5810-u-2-ssd-thumbmail-image.jpg" alt="Article">
-                    </div>
-                    <div class="cmp-article-list__article-content">
-                        <span class="cmp-article-list__article-category">Industry Solution</span>
-                        <h3 class="cmp-article-list__article-title">Introducing the Solidigm Fully Liquid-Cooled SSD Solution</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="cmp-article-list__article">
-                <a href="products/technology/benefits-of-solidigm-d5-series-for-edge-storage-solutions.html">
-                    <div class="cmp-article-list__article-image">
-                        <img src="site/products/data-center/hero-images/DataCenter_Hero_mobile.jpg" alt="Article">
-                    </div>
-                    <div class="cmp-article-list__article-content">
-                        <span class="cmp-article-list__article-category">Product Insights</span>
-                        <h3 class="cmp-article-list__article-title">Top 5 Benefits of Solidigm D5-Series SSDs for Edge Storage Solutions</h3>
-                    </div>
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- AI Solutions Blade -->
-    <section class="cmp-blade" style="background-color: var(--light-gray);">
-        <div class="cmp-blade__content">
-            <h2 class="cmp-blade__title">Data Storage Optimized for the AI Era</h2>
-            <div class="cmp-blade__description">
-                The AI boom is creating ever-higher demands for data infrastructure performance and efficiency. Solidigm and its partners tackle the evolving AI landscape.
-                <span class="cmp-blade__description--border"></span>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-section__container">
+            <h2 class="about-section__title">About SSDRAMS</h2>
+            <div class="about-section__content">
+                <p>
+                    SSDRAMS is a leading distributor of enterprise storage and memory solutions, serving data centers, 
+                    cloud providers, and enterprise customers worldwide. We partner with industry-leading technology 
+                    companies to deliver cutting-edge products that power the digital infrastructure of tomorrow.
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    Our expertise spans across enterprise SSDs, memory modules, and complete data center solutions. 
+                    We provide comprehensive support, technical consultation, and reliable supply chain management 
+                    to help our customers build and optimize their IT infrastructure.
+                </p>
             </div>
-            <div class="cmp-blade__cta-container">
-                <a href="solutions/artificial-intelligence.html" class="solidigm-btn">Learn How</a>
-            </div>
-        </div>
-        <div class="cmp-blade__media">
-            <img src="site/products/data-center/d7/p5810/thumbnails/form-factors/u-2/solidigm-d7-p5810-u-2-ssd-thumbmail-image.jpg" alt="AI Solutions">
         </div>
     </section>
-
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="footer-content">
             <div class="footer-content__main">
                 <div class="footer-content__left">
                     <a href="index.html" class="footer-content__logo" title="Back to homepage">
-                        <img src="https://www.solidigm.com/content/dam/solidigm/en/brand/logo-white.png" alt="Solidigm" style="height: 40px; margin-bottom: 2rem;">
+                        <span style="color: #1d1d1f; font-size: 1.5rem; font-weight: 600; display: block; margin-bottom: 2rem; letter-spacing: -0.01em;">SSDRAMS</span>
                     </a>
                     <div class="footer-content__copyright">
-                        <p>10951 White Rock Rd, Rancho Cordova, CA 95670</p>
-                        <p>US +1 (855) 765 4301</p>
-                        <p>© Solidigm 2025. All rights reserved.</p>
+                        <p style="color: #86868b;">Your Trusted Partner for Enterprise Storage & Memory Solutions</p>
+                        <p style="margin-top: 1rem; color: #86868b;">© SSDRAMS 2025. All rights reserved.</p>
                     </div>
                 </div>
                 <nav>
                     <p class="footer-content__title">Company</p>
                     <ul class="footer-content__links">
-                        <li><a href="#who-we-are" class="footer-content__links__link">Who we are</a></li>
-                        <li><a href="#our-team" class="footer-content__links__link">Our Team</a></li>
-                        <li><a href="#careers" class="footer-content__links__link">Careers</a></li>
-                        <li><a href="#partners" class="footer-content__links__link">Partners</a></li>
+                        <li><a href="#about" class="footer-content__links__link">About Us</a></li>
+                        <li><a href="products/data-center.html" class="footer-content__links__link">Products</a></li>
+                        <li><a href="#contact" class="footer-content__links__link">Contact</a></li>
                     </ul>
                 </nav>
                 <nav>
-                    <p class="footer-content__title">Useful links</p>
+                    <p class="footer-content__title">Contact</p>
                     <ul class="footer-content__links">
-                        <li><a href="products/technology.html" class="footer-content__links__link">Insights</a></li>
-                        <li><a href="#support" class="footer-content__links__link">Help Center</a></li>
-                        <li><a href="#warranty" class="footer-content__links__link">Warranty Check</a></li>
+                        <li><a href="mailto:info@ssdrams.com" class="footer-content__links__link">info@ssdrams.com</a></li>
+                        <li><a href="tel:+1234567890" class="footer-content__links__link">+1 (234) 567-890</a></li>
                     </ul>
                 </nav>
-            </div>
-            <div class="footer-content__trademark">
-                <div class="footer-content__text">
-                    <p>SOLIDIGM and the Solidigm "S" logo are trademarks of SK hynix NAND Product Solutions Corp. (d/b/a Solidigm), registered in the United States, People's Republic of China, Taiwan, Hong Kong, Singapore, the European Union, the United Kingdom, Mexico, and other countries. Other names and brands may be claimed as the property of others.</p>
-                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Splide Carousel JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
